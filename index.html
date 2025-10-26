@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Up - NewsBlog</title>
+  <style>
+    body { background: #f9f9f9; font-family: Arial, sans-serif; }
+    .container { max-width: 350px; background: #fff; margin: 70px auto; padding: 30px; box-shadow: 0 4px 20px #ddd; border-radius: 8px; }
+    h2 { text-align: center; margin-bottom: 15px; }
+    input[type="text"], input[type="password"], input[type="email"] { width: 100%; padding: 10px; margin-bottom: 14px; border: 1px solid #ccc; border-radius: 5px; }
+    button { width: 100%; padding: 10px; background: #43a047; color: #fff; border: none; border-radius: 5px; font-weight: bold; }
+    .message { text-align: center; margin-top: 12px; color: #388e3c; }
+    .login-link { display: block; text-align: center; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Sign Up</h2>
+    <form id="signupForm">
+      <input type="text" id="name" placeholder="Name" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="text" id="username" placeholder="Choose a Username" required>
+      <input type="password" id="password" placeholder="Choose a Password" required>
+      <button type="submit">Register</button>
+      <div class="message" id="signupMsg"></div>
+    </form>
+    <a href="login.html" class="login-link">Already have an account? Login</a>
+  </div>
+  <script>
+    document.getElementById('signupForm').onsubmit = function(e){
+      e.preventDefault();
+      document.getElementById('signupMsg').textContent = "Signup successful! Please login.";
+      setTimeout(function(){ window.location.href = "login.html"; }, 1200);
+    };
+  </script>
+</body>
+</html>
